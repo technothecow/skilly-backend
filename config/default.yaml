@@ -1,0 +1,39 @@
+name: 'Skilly'
+version: '0.1'
+debug: true
+
+server_config:
+  host: '0.0.0.0'
+  port: 8000
+
+mongo_config:
+  host: 'localhost'
+  port: 27017
+  db: 'main'
+  collection_name: 'main_collection'
+
+security_config:
+  token_expires_delta: 10000
+
+categories:
+  - 'Coding'
+  - 'Maths'
+  - 'Art'
+  - 'Music'
+  - 'Cooking'
+  - 'Sports'
+  - 'Russian'
+  - 'English'
+  - 'Other language'
+  - 'Literature'
+
+validation_config:
+  max_email_length: 50
+  max_name_length: 20
+  max_description_length: 500
+
+s3_config:
+  bucket_name: 'skilly-bucket'
+  access_key: 'admin'
+  secret_key: 'adminadmin'
+  hostname: 'localhost:9000'
