@@ -14,9 +14,10 @@ async def v1_home_post(response: Response, username: Annotated[str, Depends(get_
         response.status_code = status.HTTP_307_TEMPORARY_REDIRECT
         return {'redirect': '/profile/fill'}
 
-    # TODO: implement
+    # TODO: implement home logic
     return HomeData(
         username=username,
+        display_name='Test User',
         learn_categories=['Math', 'Science'],
         teach_categories=['Arts', 'Music'],
         recommended=[
@@ -42,9 +43,10 @@ async def v1_home_post(response: Response, username: Annotated[str, Depends(get_
             Event(
                 name='Math Study Group',
                 id='1',
-                datetime=datetime.now(),
+                start_datetime=datetime.now(),
+                end_datetime=datetime.now(),
                 description='Join us for a study group on math!'
             )
         ],
-        is_maintained=False
+        is_maintained=True
     )

@@ -11,6 +11,8 @@ class ServerConfig(BaseModel):
 class MongoConfig(BaseModel):
     host: str
     port: int
+    username: str
+    password: str
     db: str
     collection_name: str
 

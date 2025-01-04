@@ -23,12 +23,14 @@ class Chat(BaseModel):
 class Event(BaseModel):
     name: str = Field(..., min_length=1)
     id: str = Field(..., min_length=1)
-    datetime: datetime
+    start_datetime: datetime
+    end_datetime: datetime
     description: str = Field(..., min_length=1)
 
 
 class HomeData(BaseModel):
     username: str = Field(..., min_length=1)
+    display_name: str = Field(..., min_length=1)
     learn_categories: List[str] = Field(..., min_items=1)
     teach_categories: List[str] = Field(..., min_items=1)
     recommended: List[RecommendedUser]

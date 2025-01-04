@@ -1,5 +1,6 @@
 import importlib
 import pathlib
+from sys import stderr
 from logging import getLogger
 
 
@@ -21,4 +22,4 @@ def load_routes(app, base_path: str, url_prefix: str):
                 if hasattr(module, "router"):
                     app.include_router(module.router, prefix=url_prefix)
             except Exception as e:
-                print(f"Failed to load {module_path}: {e}")
+                print(f"Failed to load {module_path}: {e}", file=stderr)

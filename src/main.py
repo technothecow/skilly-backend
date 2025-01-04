@@ -1,6 +1,7 @@
 import importlib
 import logging
 import pathlib
+
 from fastapi import FastAPI
 
 from src.middleware.middleware import setup_middleware
